@@ -13,7 +13,7 @@ is an equivalent project to my **Laravel-Auth2-API** project. Here I'm using **J
 - **/login** <br>
 
 
-The required feelds of the **User** model will be vallidated and unwanted database injections prevented. Conclusive error messages will be send to the Client. 
+The required fields of the **User** model will be vallidated and unwanted database injections prevented. Conclusive error messages will be send to the Client. 
  
 <br>
 
