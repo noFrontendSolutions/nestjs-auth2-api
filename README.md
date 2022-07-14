@@ -10,7 +10,11 @@ is an equivalent to my **Laravel-Auth2-API** project. Here I'm using **JWT Token
 ### Routes:
 - **/sign-up**  
 
-- **/login** <br>
+- **/login** 
+
+- **/users/dashboard** (protected)
+
+<br>
 
 
 The required fields of the **User** model will be vallidated and unwanted database injections prevented. Conclusive error messages will be send to the Client. 

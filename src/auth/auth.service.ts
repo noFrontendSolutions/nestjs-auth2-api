@@ -60,7 +60,8 @@ export class AuthService {
   }
 
   async createToken(userId: number, email: string) {
-    const payload = { sub: userId, email };
+    //the payload object gets passed along in all the protected routes, like "/users/dashboard"
+    const payload = { sub: userId, email: email };
     return await this.jwt.signAsync(payload, {
       expiresIn: '1d',
       secret: this.config.get('JWT_SECRET'),
