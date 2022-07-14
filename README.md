@@ -44,7 +44,7 @@ Crate the migration file for the **User** model, which will then create the core
 ```bash
 npx prisma migrate dev
 ```
-(I've also created a **Comment** model with a one-to-many relation to the **User** model as an example. See the **./prisma/schema.prisma** for details)
+As an example for a one-to-many relation, I've also created a **Comment** model with a relation to the **User** model, which means that a **comments** table will also be created. See the **./prisma/schema.prisma** file for details.
 <br>
 
 Now you can start up the development server and begin a new project:
