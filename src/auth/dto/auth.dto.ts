@@ -5,8 +5,6 @@ import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 //The 'whiteList' option is used to only register fields that have been exolicitly specified in the dtos.
 
 export class SignUpDto {
-  id: number;
-
   @IsEmail()
   @IsNotEmpty()
   email: string;
@@ -25,8 +23,6 @@ export class SignUpDto {
 }
 
 export class LoginDto {
-  id: number;
-
   @IsString()
   @IsNotEmpty()
   password: string;

@@ -18,10 +18,9 @@ export class JwtStrategy extends PassportStrategy(Strategy, 'jwt') {
   //the "sub" field is convention for "id" and comes from the createToken function in auth.service.ts whixh creates the payload from the id and email field during login/signup.
   async validate(payload: { sub: number; email: string }) {
     const user = await this.prisma.user.findUnique({
-      where: { email: payload.email },
+      where: { id: payload.sub },
     });
     delete user.password;
-    return { user, payload };
+    return { ...user };
   }
 }
-//NOTE!!!!! For some reason the "sub" field doesn't get attached to the payload, which is why I have to identify user via email.

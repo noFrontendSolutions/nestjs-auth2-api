@@ -33,7 +33,10 @@ export class AuthService {
     }
 
     delete user.password;
-    return { token: await this.createToken(loginDto.id, loginDto.email), user };
+    return {
+      token: await this.createToken(user.id, loginDto.email),
+      user,
+    };
   }
 
   async signUp(signUpDto: SignUpDto) {
@@ -45,7 +48,7 @@ export class AuthService {
       });
       delete user.password;
       return {
-        token: await this.createToken(signUpDto.id, signUpDto.email),
+        token: await this.createToken(user.id, signUpDto.email),
         user,
       };
     } catch (error) {
@@ -61,7 +64,7 @@ export class AuthService {
 
   async createToken(userId: number, email: string) {
     //the payload object gets passed along in all the protected routes, like "/users/dashboard"
-    const payload = { sub: userId, email: email };
+    const payload = { sub: userId, email };
     return await this.jwt.signAsync(payload, {
       expiresIn: '1d',
       secret: this.config.get('JWT_SECRET'),
