@@ -5,7 +5,7 @@
 # NestJS-Auth2-API
 
 ---
-is an equivalent project to my **Laravel-Auth2-API** project. Here I'm using **JWT Tokens** for the authentication slash authorization. It was made with **NestJs** and uses **Prisma** as the **ORM**. It may come in handy as a scaffolding for a bigger project that requires authentication. 
+is an equivalent to my **Laravel-Auth2-API** project. Here I'm using **JWT Tokens** for the authentication slash authorization. It was made with **NestJs** and uses **Prisma** as the **ORM**. It may come in handy as a scaffolding for a bigger project that requires authentication. 
 
 ### Routes:
 - **/sign-up**  
