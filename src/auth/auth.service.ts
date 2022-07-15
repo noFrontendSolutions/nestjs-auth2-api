@@ -34,7 +34,7 @@ export class AuthService {
 
     delete user.password;
     return {
-      token: await this.createToken(user.id, loginDto.email),
+      token: await this.createToken(user.id, user.email),
       user,
     };
   }
@@ -48,7 +48,7 @@ export class AuthService {
       });
       delete user.password;
       return {
-        token: await this.createToken(user.id, signUpDto.email),
+        token: await this.createToken(user.id, user.email),
         user,
       };
     } catch (error) {
